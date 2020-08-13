@@ -1,3 +1,8 @@
+/*
+1. Time complexity O(n^2) over -> time out
+2. If answer's data type is int, it brings out wrong answer(negative value) because the answer can be 10^12 for maxinum. -> answer's data type has to be long long(printf format : %lld).
+*/
+
 #include <stdio.h>
 #include <iostream>
  
