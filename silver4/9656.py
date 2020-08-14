@@ -1,3 +1,4 @@
+""" 재귀적 풀이(시간초과)
 def benefitial(a,b,c):
   if b!=a:
     if c==a: return c
@@ -15,7 +16,10 @@ def game(x,y):
     return benefitial(y,game(x-1,not y),game(x-3,not y))
 
 data = input()
+data = int(data)
 if game(data,True)==True:
   print('SK')
 else:
   print('CY')
+"""
+
