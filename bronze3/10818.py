@@ -1,5 +1,5 @@
 N = int(input())
-max = 0
+max = -1000000
 min = 1000000
 number = []
 number = input().split()
