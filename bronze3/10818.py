@@ -1,8 +1,9 @@
 N = int(input())
-max = -1000000
-min = 1000000
 number = []
 number = input().split()
+
+max = int(number[0])
+min = int(number[0])
 
 for i in range(N):
   if int(number[i]) > max:
