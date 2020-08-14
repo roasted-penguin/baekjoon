@@ -1,4 +1,4 @@
-""" 재귀적 풀이(시간초과)
+""" 동적계획법 풀이(시간초과)
 def benefitial(a,b,c):
   if b!=a:
     if c==a: return c
@@ -18,8 +18,14 @@ def game(x,y):
 data = input()
 data = int(data)
 if game(data,True)==True:
-  print('SK')
-else:
   print('CY')
+else:
+  print('SK')
 """
 
+data = input()
+data = int(data)
+if data%2==1:
+  print('CY')
+else:
+  print('SK')
