@@ -1,7 +1,12 @@
+"""
+1. 입출력문제 -> import sys, sys.stdin.readline()으로 해결
+"""
+import sys
+
 N = int(input())
 stack = []
 for i in range(N):
-  query = list(input().split())
+  query = list(sys.stdin.readline().split())
   if query[0] == 'push':
     stack.append(int(query[1]))
   if query[0] == 'pop':
