@@ -1,29 +1,29 @@
+# 런타임 
 N = int(input())
-
 A = list(map(int,input().split()))
 A = sorted(A)
-length_A = len(A)
+Alen = len(A)
 
 M = int(input())
-X = list(map(int,input().split()))
+numbers = list(map(int,input().split()))
 
-def binsearch(front,end,arr,number):
-  if number > end:
-
+def Binsearch(arr,find,low,high):
+    if low > high:
+        return False
+    else:
+        mid = (low+high)//2
+    
+        if arr[mid]==find:
+            return True
+        else:
+            if arr[mid] > find:
+                return Binsearch(arr,find,low,mid-1)
+            else:
+                return Binsearch(arr,find,mid+1,high)
 
 for i in range(M):
-  if binsearch(0,length_A,A,X[i]):
-    print(1)
-  else:
-    print(0)
-
-
-number = 3
-1 2 3 4 4 5 6 6
-if number == arr[length//2]:
-  return True
-elif number > arr[length//2]:
-  return binsearch(arr,number)
-else:
-  return binsearch()
-1 2 3 4 4 5 6 6 7 arr[length//2]
+    num = numbers[i]
+    if Binsearch(A,num,0,Alen):
+        print(1)
+    else:
+        print(0)
