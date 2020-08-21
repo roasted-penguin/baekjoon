@@ -1,4 +1,4 @@
-# 런타임 
+# 런타임 에러 이유 : 26.if Binsearch(A,num,0,Alen) -> if Binsearch(A,num,0,Alen-1)
 N = int(input())
 A = list(map(int,input().split()))
 A = sorted(A)
@@ -23,7 +23,7 @@ def Binsearch(arr,find,low,high):
 
 for i in range(M):
     num = numbers[i]
-    if Binsearch(A,num,0,Alen):
+    if Binsearch(A,num,0,Alen-1):
         print(1)
     else:
         print(0)
