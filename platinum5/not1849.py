@@ -1,3 +1,6 @@
+"""
+#1. 배열
+
 N = int(input())
 A = []
 ansarr =[0 for i in range(N+1)]
@@ -14,3 +17,20 @@ for i in range(1,N+1):
   
 for i in range(1,N+1):
   print(ansarr[i])
+  
+#2. stack 활용(pop)
+
+N = int(input())
+values = []
+for i in range(N):
+  values.append(i)
+ansarr =[0 for i in range(N)]
+for i in range(0,N):
+  val = int(input())
+  index = values.pop(val)
+  ansarr[index] = i+1
+
+  
+for i in range(0,N):
+  print(ansarr[i])
+"""
