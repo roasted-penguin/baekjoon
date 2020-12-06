@@ -19,7 +19,7 @@ def makeZ(arr,level,n):
                     num = 3*power + arr[i-pwr][j-pwr]
                     
                 ARR[i][j] = num
-        print(ARR)
+        #print(ARR)
         #ARR = [[z,z+power],[z+2*power,z+3*power]]
         return makeZ(ARR,level+1,n)
 
