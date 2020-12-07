@@ -1,3 +1,6 @@
+
+#크기 초과(배열크기 4^N)
+"""
 def makeZ(arr,level,n):
     if level == n:
         return arr
@@ -28,3 +31,23 @@ z = [[0,1],[2,3]]
 
 theZ = makeZ(z,1,N)
 print(theZ[r][c])
+"""
+
+N, r, c = map(int,input().split())
+R, C = 0, 0
+
+power = 0
+while r != 0:
+    if r % 2 == 1:
+        R += 2*pow(4,power)
+    r //= 2
+    power += 1
+
+power = 0
+while c != 0:
+    if c % 2 == 1:
+        C += pow(4,power)
+    c //= 2
+    power += 1
+
+print(R+C)
