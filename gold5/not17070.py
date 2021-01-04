@@ -10,23 +10,34 @@ if [tile[0][2], tile[1][1], tile[1][2]] == [0,0,0]:
 
 for i in range(N):
     for j in range(N):
-        if direction[i][j][0] == 1:#horizontal
+        print(i,j)
+        if direction[i][j][0] > 0:#horizontal
+            num = direction[i][j][0]
             if j+1 < N and tile[i][j+1] == 0:#move horizontal
-                direction[i][j+1][0] += 1
-            if i+1 < N and j+1 < N  and tile[i][j+1] == 0 and tile[i+1][j+1] and tile[i+1][j]:#move diagonal
-                direction[i+1][j+1][1] += 1
-        if direction[i][j][1] == 1:#diagonal
+                direction[i][j+1][0] += num
+                print("h,h")
+            if i+1 < N and j+1 < N  and tile[i][j+1] == 0 and tile[i+1][j+1]==0 and tile[i+1][j]==0:#move diagonal
+                direction[i+1][j+1][1] += num
+                print("h,d")
+        if direction[i][j][1] > 0:#diagonal
+            num = direction[i][j][1]
             if j+1 < N and tile[i][j+1] == 0:#move horizontal
-                direction[i][j+1][0] += 1
-            if i+1 < N and j+1 < N  and tile[i][j+1] == 0 and tile[i+1][j+1] and tile[i+1][j]:#move diagonal
-                direction[i+1][j+1][1] += 1
-            if i+1 < N and tile[i+1][j] == 0:#move vertical
-                direction[i+1][j][2] += 1
-        if direction[i][j][2] == 1:#vertical
-            if i+1 < N and j+1 < N  and tile[i][j+1] == 0 and tile[i+1][j+1] and tile[i+1][j]:#move diagonal
-                direction[i+1][j+1][0] += 1
-            if i+1 < N and tile[i+1][j] == 0:#move:#move vertical
-                direction[i+1][j][2] += 1
+                direction[i][j+1][0] += num
+                print("d,h")
+            if i+1 < N and j+1 < N  and tile[i][j+1]==0 and tile[i+1][j+1]==0 and tile[i+1][j]==0:#move diagonal
+                direction[i+1][j+1][1] += num
+                print("d,d")
+            if i+1 < N and tile[i+1][j]==0:#move vertical
+                direction[i+1][j][2] += num
+                print("d,v")
+        if direction[i][j][2] > 0:#vertical
+            num = direction[i][j][2]
+            if i+1 < N and j+1 < N  and tile[i][j+1]==0 and tile[i+1][j+1]==0 and tile[i+1][j]==0:#move diagonal
+                direction[i+1][j+1][0] += num
+                print("v,d")
+            if i+1 < N and tile[i+1][j]==0:#move:#move vertical
+                direction[i+1][j][2] += num
+                print("v,v")
 
 ans = direction[N-1][N-1][0] + direction[N-1][N-1][1] + direction[N-1][N-1][2]
 print(ans)
