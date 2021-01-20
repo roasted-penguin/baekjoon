@@ -8,4 +8,4 @@ else:
         for j in range(i):
             num += store[j]*store[i-j-1]
         store.append(num)
-print(store[n])
+    print(store[n])
