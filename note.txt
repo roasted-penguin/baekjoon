@@ -1,0 +1,7 @@
+#플로이드 워셜
+
+graph:이중배열, 무한(INF) = 1e9 그래프
+for k in range(1,N+1):
+    for a in range(1,N+1):
+        for b in range(1,N+1):
+            graph[a][b] = min(graph[a][b],graph[a][k]+graph[k][b])
