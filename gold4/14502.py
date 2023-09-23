@@ -6,7 +6,7 @@ N, M = map(int,input().split())
 
 arr = [list(map(int,input().split())) for _ in range(N)]
 
-//벽 세우는 경우의 수 : (N*M) C 3
+# 벽 세우는 경우의 수 : (N*M) C 3
 combarr = []
 
 for i in range(N):
@@ -36,7 +36,7 @@ def makewall(arr,comb3):
         result = cntzero
   print(result)
 
-#2. 바이러스 증식
+# 2. 바이러스 증식
 def spread(graph):
   queue = deque()
   for x in range(N):
@@ -59,7 +59,7 @@ def spread(graph):
           graph[nx][ny] = 2
   
   
-3. 0 갯수 세기
+# 3. 0 갯수 세기
 def countzero(graph):
   count = 0
   for i in range(N):
