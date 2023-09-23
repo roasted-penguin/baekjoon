@@ -17,8 +17,7 @@ while queue:
     if nx < 0 or nx >= N or ny < 0 or ny >= M:
       continue
     if not visited[nx][ny] and graph[nx][ny]!=0:
-      if graph[nx][ny] < graph[x][y] + 1:
-        graph[nx][ny] = graph[x][y] + 1
+      graph[nx][ny] = graph[x][y] + 1
       queue.append([nx,ny])
       visited[nx][ny] = True
 print(graph[N-1][M-1])
